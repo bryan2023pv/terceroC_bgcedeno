@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+   {% if user.is_authenticated %}
+           <center><img src= "https://static.vecteezy.com/system/resources/previews/005/005/788/original/user-icon-in-trendy-flat-style-isolated-on-grey-background-user-symbol-for-your-web-site-design-logo-app-ui-illustration-eps10-free-vector.jpg" width="150" height="150" /></center>
+       <center><b>Hola {{ user.username }}!</b>
+          <br><br>
+           <a href="/myapp" class="btn btn-info">Universidad Cursos</a>
+
+          <br><br>
+          <a href="/signout" class="btn btn-danger">Cerrar Sesion</a>
+    {% else %}
+      <a href="/signin" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>Iniciar Sesion</a>
+      <a href="/signup" class="btn btn-success">Registrate</a></center>
+    {% endif %}
+{% endblock %}
+
